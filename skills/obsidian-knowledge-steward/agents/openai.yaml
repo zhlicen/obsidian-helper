@@ -1,4 +1,0 @@
-interface:
-  display_name: "Obsidian Knowledge Steward"
-  short_description: "Steward an Obsidian knowledge lifecycle from capture to review"
-  default_prompt: "Use $obsidian-knowledge-steward to initialize, capture, search, organize, incubate, or review knowledge in my Obsidian vault."

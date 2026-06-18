@@ -6,6 +6,8 @@
 
 Default. Analyze and propose changes without structural mutation. Routine capture into the inbox and read-only operations remain immediate.
 
+An explicit request to capture or minimally update a note remains immediate in Suggest Mode. The authorization covers only that single minimal write.
+
 ### Auto Mode
 
 May apply only configured low-risk transformations. Auto Mode never overrides confirmation requirements for high-impact or external actions.
@@ -15,6 +17,7 @@ May apply only configured low-risk transformations. Auto Mode never overrides co
 Require confirmation before:
 
 - creating or changing the top-level directory structure
+- creating companion directories or additional artifacts not explicitly requested
 - moving, renaming, merging, or bulk-editing existing notes
 - applying a migration
 - installing or enabling plugins
@@ -27,8 +30,15 @@ Require confirmation before:
 
 - Archive rather than delete.
 - Record structural changes in the change ledger with timestamp, actor, operation, source, destination, and reason.
-- For bulk changes, create a manifest sufficient to reverse the operation.
+- For bulk changes, create a manifest with every affected path and original metadata sufficient to reverse the operation. A count-only ledger entry is insufficient.
 - Never silently overwrite a conflicting note.
+- Never rewrite file timestamps to hide an agent modification or simulate historical activity.
+
+## Scope control
+
+- Treat the user's verb as the scope boundary: record means record, update means update, organize means organize, and advise means advise.
+- Do not bundle optional improvements into an authorized mutation.
+- Do not create directories, indexes, tasks, schedules, or recommendations while performing a routine Capture or Update.
 
 ## Privacy
 
