@@ -30,34 +30,42 @@ Python 3.9 或更高版本为可选依赖，仅用于运行附带的只读环境
 
 ## 安装
 
-首先克隆仓库：
+### OpenClaw
+
+把下面这句话发给 OpenClaw：
+
+```text
+请安装这个 Agent Skill：https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper 。安装后请验证 obsidian-helper 已经可用，并告诉我安装路径。
+```
+
+### Codex
+
+把下面这句话发给 Codex：
+
+```text
+$skill-installer Install https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper
+```
+
+Codex 通常会自动发现新安装的 Skill；没有出现时再重启。具体说明参见 [Codex 官方 Skills 文档](https://developers.openai.com/codex/skills)。
+
+<details>
+<summary>手动安装备用方案</summary>
+
+克隆仓库：
 
 ```bash
 git clone https://github.com/zhlicen/obsidian-helper.git
 cd obsidian-helper
 ```
 
-### Codex
-
-Codex 会从 `~/.agents/skills` 发现个人 Skill，并且支持符号链接：
+安装到 Codex：
 
 ```bash
 mkdir -p ~/.agents/skills
-ln -s "$PWD/skills/obsidian-helper" \
-  ~/.agents/skills/obsidian-helper
+cp -R skills/obsidian-helper ~/.agents/skills/obsidian-helper
 ```
 
-仓库发布后，也可以直接告诉 Codex：
-
-```text
-$skill-installer Install https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper
-```
-
-如果 Skill 没有自动出现，再重启 Codex。具体说明参见 [Codex 官方 Skills 文档](https://developers.openai.com/codex/skills)。
-
-### OpenClaw
-
-将 Skill 复制到当前 OpenClaw 工作区：
+安装到 OpenClaw：
 
 ```bash
 mkdir -p ~/.openclaw/workspace/skills
@@ -65,6 +73,8 @@ cp -R skills/obsidian-helper \
   ~/.openclaw/workspace/skills/obsidian-helper
 openclaw skills info obsidian-helper
 ```
+
+</details>
 
 ### 其他兼容 Agent
 

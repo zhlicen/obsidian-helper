@@ -30,34 +30,42 @@ Python 3.9 or newer is optional and is used only by the bundled read-only enviro
 
 ## Installation
 
-Clone this repository first:
+### OpenClaw
+
+Send this message to OpenClaw:
+
+```text
+Install this Agent Skill: https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper . After installation, verify that obsidian-helper is available and tell me its installed path.
+```
+
+### Codex
+
+Send this message to Codex:
+
+```text
+$skill-installer Install https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper
+```
+
+Codex detects newly installed skills automatically. Restart it only if the skill does not appear. See the [official Codex skills documentation](https://developers.openai.com/codex/skills).
+
+<details>
+<summary>Manual installation fallback</summary>
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/zhlicen/obsidian-helper.git
 cd obsidian-helper
 ```
 
-### Codex
-
-Codex discovers personal skills in `~/.agents/skills` and supports symlinked skill directories:
+Install for Codex:
 
 ```bash
 mkdir -p ~/.agents/skills
-ln -s "$PWD/skills/obsidian-helper" \
-  ~/.agents/skills/obsidian-helper
+cp -R skills/obsidian-helper ~/.agents/skills/obsidian-helper
 ```
 
-After the repository is published, you can also tell Codex:
-
-```text
-$skill-installer Install https://github.com/zhlicen/obsidian-helper/tree/main/skills/obsidian-helper
-```
-
-Restart Codex only if the skill does not appear automatically. See the [official Codex skills documentation](https://developers.openai.com/codex/skills).
-
-### OpenClaw
-
-Copy the skill into the active OpenClaw workspace:
+Install for OpenClaw:
 
 ```bash
 mkdir -p ~/.openclaw/workspace/skills
@@ -65,6 +73,8 @@ cp -R skills/obsidian-helper \
   ~/.openclaw/workspace/skills/obsidian-helper
 openclaw skills info obsidian-helper
 ```
+
+</details>
 
 ### Other compatible agents
 
