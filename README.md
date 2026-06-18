@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Obsidian Helper is a portable [Agent Skill](https://agentskills.io) for capturing, finding, organizing, developing, and reviewing knowledge in an Obsidian vault.
+Obsidian Helper is a portable [Agent Skill](https://agentskills.io) for individuals and teams to capture, find, organize, develop, and review knowledge in an Obsidian vault.
 
 It is designed for Codex, OpenClaw, and other Agent Skills-compatible runtimes. The skill is written in English, while onboarding, notes, and reports use the user's configured working language.
 
@@ -17,8 +17,38 @@ It is designed for Codex, OpenClaw, and other Agent Skills-compatible runtimes. 
 - Enters idea incubation only when the user explicitly asks to expand, analyze, plan, or recommend.
 - Manages tasks and reminders through runtime-provided scheduling when available.
 - Produces periodic reviews, inbox reports, and vault health assessments.
+- Resolves people, aliases, projects, customers, systems, and technologies for team knowledge management.
 
 All knowledge remains in the user's vault. Plugins are optional, and structural changes are suggestion-first by default.
+
+## Knowledge lifecycle
+
+`Capture or Update → Inbox → Search → Organize → Knowledge Base → Incubate → Knowledge Assets → Review`
+
+Capture and factual updates stay minimal. Incubation starts only when the user explicitly asks to expand, analyze, plan, or recommend.
+
+## Working modes
+
+- **Personal**: a private knowledge base. Content is not sent outside the vault unless the user explicitly requests it.
+- **Team**: shared knowledge with people, roles, projects, entities, team reports, and conservative identity resolution.
+- **Hybrid**: personal and shared knowledge in one vault with visibility boundaries. Personal notes never enter team reports.
+
+The mode is selected during onboarding and can be changed later without restructuring the vault.
+
+## Expert orchestration
+
+Users interact only with Obsidian Helper. It routes each request to the smallest relevant logical specialist:
+
+- **Onboarding Architect**: initialization, configuration, dependency checks, vault assessment, and migration planning.
+- **Capture Curator**: minimal capture and factual updates without unsolicited advice.
+- **Knowledge Librarian**: read-only search, evidence ranking, comparison, and source-backed summaries.
+- **Knowledge Architect**: taxonomy, metadata, tags, links, templates, indexes, dashboards, and organization proposals.
+- **Idea Strategist**: explicit idea incubation into PRDs, technical designs, project plans, ADRs, and roadmaps.
+- **Action Manager**: tasks, reminders, time zones, recurrence, delivery, and schedule consistency.
+- **Review Analyst**: daily, weekly, monthly, quarterly, project, inbox, and team reports.
+- **Entity Curator**: people, aliases, roles, projects, customers, systems, technologies, and relationships.
+
+Specialists may analyze in parallel when the runtime supports it, but Obsidian Helper remains the single formal writer and returns one unified response.
 
 ## Prerequisites
 
