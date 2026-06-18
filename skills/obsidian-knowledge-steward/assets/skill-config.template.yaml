@@ -1,0 +1,55 @@
+schema_version: 1
+
+user:
+  working_language: ""
+  timezone: ""
+  mode: personal
+
+vault:
+  name: ""
+  path: ""
+  sync_provider: unknown
+
+preferences:
+  organize_mode: suggest
+  capture_to_inbox: true
+  preserve_original_language: true
+  inbox_sla_days: 30
+  default_reminder_channel: ""
+  change_ledger: true
+
+directories:
+  inbox: 00_Inbox
+  daily_notes: 10_Daily_Notes
+  ideas: 20_Ideas
+  projects: 30_Projects
+  areas: 40_Areas
+  resources: 50_Resources
+  archive: 60_Archive
+  system: 90_System/KnowledgeSteward
+  attachments: 50_Resources/Attachments
+
+modules:
+  capture: true
+  search: true
+  organize: true
+  incubate: true
+  tasks: true
+  reminders: true
+  review: true
+  people: false
+  entities: true
+  dashboards: false
+
+adapters:
+  prefer_official_cli: true
+  launch_obsidian_when_needed: true
+  plugins:
+    dataview: auto
+    templater: auto
+    tasks: auto
+    omnisearch: auto
+    calendar: auto
+    periodic_notes: auto
+
+schedules: []
