@@ -13,7 +13,11 @@ vault:
 preferences:
   organize_mode: suggest
   capture_to_inbox: true
+  capture_mode: minimal
   preserve_original_language: true
+  allow_companion_artifacts: false
+  response_style: concise
+  routine_reply_max_lines: 2
   inbox_sla_days: 30
   default_reminder_channel: ""
   change_ledger: true
@@ -26,8 +30,11 @@ directories:
   areas: 40_Areas
   resources: 50_Resources
   archive: 60_Archive
-  system: 90_System/KnowledgeSteward
+  system: 90_System/ObsidianHelper
   attachments: 50_Resources/Attachments
+
+capture_routes:
+  idea: ideas
 
 modules:
   capture: true

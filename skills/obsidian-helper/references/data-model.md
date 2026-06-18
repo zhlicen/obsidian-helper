@@ -21,8 +21,9 @@ type: idea
 status: inbox
 created: 2026-06-18T11:30:00+08:00
 updated: 2026-06-18T11:30:00+08:00
-author: Hang
+author: user
 source: chat
+managed_by: obsidian-helper
 project: []
 entities: []
 tags: []
@@ -31,6 +32,8 @@ visibility: personal
 ```
 
 Required: `id`, `type`, `status`, `created`, `updated`, `source`.
+
+`source` identifies where the user's knowledge came from, such as `openclaw-weixin`, `chat`, `meeting`, `email`, or `web`. Never use the helper's name as `source` merely because it wrote or edited the file. Use optional `managed_by` or `last_modified_by` for the writing agent.
 
 Optional fields should be omitted or empty, never fabricated. Preserve unknown custom properties on edits.
 
@@ -41,10 +44,17 @@ Primary states:
 - `inbox`: captured and not reviewed
 - `reviewed`: understood and classified
 - `incubating`: actively developing
+- `blocked`: cannot progress because of a recorded blocker
 - `promoted`: converted into a durable knowledge asset
 - `archived`: inactive but retained
 
 Tasks may additionally use `todo`, `doing`, `done`, `cancelled`, or `deferred` in a task-specific field.
+
+## Minimal mutation
+
+- Capture preserves the user's wording and adds only required metadata and a useful title.
+- Update preserves existing content and changes only user-supplied facts plus the `updated` timestamp.
+- Never convert a factual update into analysis or recommendations without an explicit Incubate request.
 
 ## Registries
 

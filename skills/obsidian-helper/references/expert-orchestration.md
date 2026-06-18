@@ -4,7 +4,7 @@ Specialists are logical roles. Use real subagents only when the runtime supports
 
 ## Roles
 
-### Knowledge Steward
+### Obsidian Helper
 
 Own user interaction, routing, final decisions, formal writes, confirmations, and unified replies. Act as the single writer for structural changes.
 
@@ -14,7 +14,7 @@ Own initialization, configuration, dependency assessment, vault scanning, health
 
 ### Capture Curator
 
-Extract the original content, preliminary note type, source, and lightweight metadata. Propose the inbox path. Do not over-classify.
+Extract the original content, preliminary note type, source, and lightweight metadata. Perform minimal Capture and Update operations. Do not over-classify, advise, or incubate unless explicitly requested.
 
 ### Knowledge Librarian
 
@@ -46,7 +46,7 @@ Maintain people, aliases, roles, projects, customers, systems, technologies, and
 - Add secondary specialists only for genuinely cross-domain tasks.
 - Parallel specialists may read and analyze but must not write.
 - Specialists return proposals with evidence, confidence, ambiguities, and intended changes.
-- Knowledge Steward resolves conflicts and owns confirmation.
+- Obsidian Helper resolves conflicts and owns confirmation.
 - Governance policy applies before and after every specialist operation.
 
 ## Conflict examples

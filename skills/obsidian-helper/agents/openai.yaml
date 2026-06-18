@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Helper"
+  short_description: "Capture, organize, and review Obsidian knowledge"
+  default_prompt: "Use $obsidian-helper to capture, update, find, organize, or review knowledge in my Obsidian vault."

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only, cross-platform discovery for Obsidian Knowledge Steward."""
+"""Read-only, cross-platform discovery for Obsidian Helper."""
 
 from __future__ import annotations
 
@@ -121,11 +121,18 @@ def inspect_vault(path: Path, deep: bool) -> dict[str, object]:
         name: (plugin_root / plugin_id).is_dir()
         for name, plugin_id in PLUGIN_IDS.items()
     }
+    config_candidates = [
+        path / root / namespace / "skill-config.yaml"
+        for root in ("90_System", "90.System")
+        for namespace in ("ObsidianHelper", "KnowledgeSteward")
+    ]
+    config_path = next((candidate for candidate in config_candidates if candidate.is_file()), None)
     result: dict[str, object] = {
         "path": str(path),
         "exists": path.is_dir(),
         "writable": os.access(path, os.W_OK),
-        "initialized": (path / "90_System" / "KnowledgeSteward" / "skill-config.yaml").is_file(),
+        "initialized": config_path is not None,
+        "config_path": str(config_path) if config_path else None,
         "plugins": plugins,
     }
     if deep:
